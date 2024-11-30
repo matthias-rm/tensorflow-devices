@@ -1,6 +1,6 @@
 # Tensorflow on Apple silicon
 
-Script to compare CNN train times of apple silicon CPU vs GPU using CIFAR10.
+Comparing CNN training times on apple silicon CPU vs GPU using CIFAR10.
 
 ### Install
 

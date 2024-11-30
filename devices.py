@@ -1,21 +1,14 @@
 import tensorflow as tf
-from tensorflow.python.client import device_lib
-tf.debugging.set_log_device_placement(True)
+tf.debugging.set_log_device_placement(False)
 
+devices = tf.config.list_logical_devices()
 print('All devices:')
-for device in device_lib.list_local_devices():
+for device in devices:
     print(device.name)
 
-
-with tf.device('GPU:0'):
-    x = tf.constant([1, 2, 3])
-    y = tf.constant([4, 5, 6])
-    z = x * y
-    print(z)
-
-# for device in device_lib.list_local_devices():
-#     with tf.device(device.name):
-#         x = tf.constant([1, 2, 3])
-#         y = tf.constant([4, 5, 6])
-#         z = x @ y
-#         print(z)
+for device in devices:
+    with tf.device(device.name):
+        x = tf.constant([1, 2, 3])
+        y = tf.constant([4, 5, 6])
+        z = x * y
+        tf.assert_equal(z, [4, 10, 18])

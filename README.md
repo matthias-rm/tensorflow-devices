@@ -1,38 +1,36 @@
 # Tensorflow on Apple silicon
 
+Script to compare CNN train times of apple silicon CPU vs GPU using CIFAR10.
+
 ### Install
 
-Either by using your default python version:
+Try to use your default python version:
 ```sh
 python -m venv .venv
 source .venv/bin/activate
 pip install -U pip
 pip install tensorflow tensorflow-macos tensorflow-metal
 ```
-Or, use poetry:
+
+Or, use poetry with python 3.10:
 ```sh
+poetry env use 3.10
 poetry install
 poetry shell
 ```
 
-python=3.10.15
-tensorflow=2.18.0
-tensorflow-macos=2.
-tensorflow-metal=1.1.0
+### 
+
+Check if devices work:
+```sh
+python devices.py
+```
 
 
-tensorflow-metal 1.1.0
-tensorflow-macos 2.15.1
-tensorflow 2.18.0
+```sh
+python train.py
+```
 
-pip 24.3.1
-
-tensorflow                   2.16.2
-tensorflow-macos             2.16.2
-tensorflow-metal             1.1.0
-
-
-https://stackoverflow.com/questions/59810276/why-is-my-poetry-virtualenv-using-the-system-python-instead-of-the-pyenv-python
-
-poetry init: initializes poetry in existing project
-poetry add tensorflow@^2.16.2 tensorflow-macos@2.16.2 tensorflow-metal@^1.1.0
+On my MBP-M4 the one-epoch training times are:
+- GPU: ~78s
+- CPU: ~38s

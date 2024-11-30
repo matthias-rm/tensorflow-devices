@@ -32,5 +32,5 @@ python train.py
 ```
 
 One-epoch training times on a MBP-M4 are:
-- GPU: ~78s
-- CPU: ~38s
+- CPU: ~78s
+- GPU: ~38s

@@ -19,7 +19,7 @@ poetry install
 poetry shell
 ```
 
-### 
+### Run
 
 Check if devices work:
 ```sh

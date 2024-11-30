@@ -4,7 +4,7 @@ Comparing CNN training times on apple silicon CPU vs GPU using CIFAR10.
 
 ### Install
 
-Try to use your default python version:
+Using default python version (might fail):
 ```sh
 python -m venv .venv
 source .venv/bin/activate
@@ -26,11 +26,11 @@ Check if devices work:
 python devices.py
 ```
 
-
+Train and compare CNN running times:
 ```sh
 python train.py
 ```
 
-On my MBP-M4 the one-epoch training times are:
+One-epoch training times on a MBP-M4 are:
 - GPU: ~78s
 - CPU: ~38s
